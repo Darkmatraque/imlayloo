@@ -1,65 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Clips – Imlayloo</title>
-<style>
-    body {
-        background: #0e0e10;
-        color: white;
-        font-family: Arial, sans-serif;
-        margin: 0;
-    }
-
-    header {
-        text-align: center;
-        padding: 20px 0;
-        color: #a970ff;
-        font-size: 32px;
-        font-weight: bold;
-    }
-
-    nav {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    nav a {
-        color: #a970ff;
-        margin: 0 15px;
-        text-decoration: none;
-        font-size: 18px;
-    }
-
-    nav a:hover {
-        text-decoration: underline;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    }
-
-    iframe {
-        width: 100%;
-        height: 180px;
-        border: none;
-        border-radius: 6px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Clips - Imlayloo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>Imlayloo</header>
-
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="clips.html">Clips</a>
-    <a href="rediffusions.html">Rediffusions</a>
-    <a href="reseaux.html">Réseaux</a>
-</nav>
+<header>
+    <h1>Imlayloo</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="clips.html">Clips</a>
+        <a href="rediffusions.html">Rediffusions</a>
+        <a href="reseaux.html">Réseaux</a>
+    </nav>
+</header>
 
 <div class="grid" id="clips"></div>
 
@@ -90,6 +46,9 @@ async function loadClips() {
     data.data.forEach(clip => {
         const iframe = document.createElement("iframe");
         iframe.src = `https://clips.twitch.tv/embed?clip=${clip.id}&parent=darkmatraque.github.io&autoplay=false`;
+        iframe.width = "100%";
+        iframe.height = "180";
+        iframe.frameBorder = "0";
         container.appendChild(iframe);
     });
 }
@@ -99,4 +58,5 @@ loadClips();
 
 </body>
 </html>
+
 

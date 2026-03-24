@@ -9,22 +9,42 @@
         color: white;
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 20px;
     }
 
-    h1 {
+    header {
+        text-align: center;
+        padding: 20px 0;
+        color: #a970ff;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    nav {
         text-align: center;
         margin-bottom: 20px;
     }
 
+    nav a {
+        color: #a970ff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
     .vod {
-        margin-bottom: 40px;
+        margin: 30px auto;
+        width: 90%;
+        max-width: 900px;
         padding-bottom: 20px;
         border-bottom: 1px solid #333;
     }
 
     .date {
-        font-size: 18px;
+        font-size: 20px;
         margin-bottom: 10px;
         color: #a970ff;
     }
@@ -39,7 +59,15 @@
 </head>
 <body>
 
-<h1>Rediffusions d'Imlayloo</h1>
+<header>Imlayloo</header>
+
+<nav>
+    <a href="index.html">Accueil</a>
+    <a href="clips.html">Clips</a>
+    <a href="rediffusions.html">Rediffusions</a>
+    <a href="reseaux.html">Réseaux</a>
+</nav>
+
 <div id="vods"></div>
 
 <script>
@@ -84,7 +112,7 @@ async function loadVods() {
 
         div.innerHTML = `
             <div class="date">${formatDate(vod.created_at)}</div>
-            <iframe src="https://player.twitch.tv/?video=${vod.id}&parent=darkmatraque.github.io" allowfullscreen></iframe>
+            <iframe src="https://player.twitch.tv/?video=${vod.id}&parent=darkmatraque.github.io&autoplay=false" allowfullscreen></iframe>
         `;
 
         container.appendChild(div);
@@ -96,4 +124,5 @@ loadVods();
 
 </body>
 </html>
+
 

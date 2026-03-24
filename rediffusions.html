@@ -1,45 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Rediffusions - Imlayloo</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Rediffusions – Imlayloo</title>
+<style>
+    body {
+        background: #0e0e10;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .vod {
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #333;
+    }
+
+    .date {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #a970ff;
+    }
+
+    iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+        border-radius: 6px;
+    }
+</style>
 </head>
 <body>
 
-<header>
-    <h1>Imlayloo</h1>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="clips.html">Clips</a>
-        <a href="rediffusions.html">Rediffusions</a>
-        <a href="reseaux.html">Réseaux</a>
-    </nav>
-</header>
+<h1>Rediffusions d'Imlayloo</h1>
+<div id="vods"></div>
 
-<section class="section">
-    <h2>Rediffusions (VOD)</h2>
+<script>
+const clientId = "aupzds04y3oa2il45qns8908yjebsn";
+const userId = "196955395";
 
-    <!-- VOD 1 -->
-    <h3>Live du 12 mars 2026</h3>
-    <iframe
-        src="<iframe src="https://player.twitch.tv/?video=123456&parent=darkmatraque.github.io"></iframe>"
-        height="450"
-        width="800"
-        allowfullscreen>
-    </iframe>
+async function getToken() {
+    const res = await fetch("https://id.twitch.tv/oauth2/token?client_id=" + clientId + "&grant_type=client_credentials", {
+        method: "POST"
+    });
+    return (await res.json()).access_token;
+}
 
-    <!-- VOD 2 -->
-    <h3>Live du 8 mars 2026</h3>
-    <iframe
-        src="<iframe src="https://player.twitch.tv/?video=123456&parent=darkmatraque.github.io"></iframe>"
-        height="450"
-        width="800"
-        allowfullscreen>
-    </iframe>
+function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString("fr-FR", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+}
 
-    <!-- Tu pourras en ajouter autant que tu veux -->
-</section>
+async function loadVods() {
+    const token = await getToken();
+
+    const res = await fetch(`https://api.twitch.tv/helix/videos?user_id=${userId}&type=archive&first=10`, {
+        headers: {
+            "Client-ID": clientId,
+            "Authorization": "Bearer " + token
+        }
+    });
+
+    const data = await res.json();
+    const container = document.getElementById("vods");
+
+    data.data.forEach(vod => {
+        const div = document.createElement("div");
+        div.className = "vod";
+
+        div.innerHTML = `
+            <div class="date">${formatDate(vod.created_at)}</div>
+            <iframe src="https://player.twitch.tv/?video=${vod.id}&parent=darkmatraque.github.io" allowfullscreen></iframe>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+loadVods();
+</script>
 
 </body>
 </html>
+

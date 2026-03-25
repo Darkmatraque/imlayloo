@@ -61,3 +61,19 @@ ul li a:hover {
     color: white;
 }
 
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #a259ff; /* ton violet */
+    border-radius: 2px;
+}
+

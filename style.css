@@ -305,7 +305,7 @@ ul li:hover {
 }
 
 /* -------------------- */
-/*   POPUP AIDE (NOUVEAU) */
+/*   POPUP AIDE COLORÉ  */
 /* -------------------- */
 
 .modal {
@@ -313,37 +313,43 @@ ul li:hover {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
     justify-content: center;
     align-items: center;
     z-index: 9999;
 }
 
 .modal-content {
-    background: rgba(255,255,255,0.9); /* Plus opaque = plus lisible */
-    border-radius: 14px;
+    background: rgba(162, 89, 255, 0.25); /* Violet transparent */
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
     padding: 25px 30px;
+    border-radius: 16px;
     width: 90%;
-    max-width: 380px; /* Plus compact */
+    max-width: 380px;
+
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     animation: popup 0.25s ease;
 }
 
 body.dark .modal-content {
-    background: rgba(30,30,30,0.9); /* Version sombre */
+    background: rgba(162, 89, 255, 0.15); /* Version sombre */
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .modal-content h2 {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 26px;
-    color: var(--text);
+    color: white;
     font-weight: 700;
 }
 
 .modal-content p {
-    color: var(--text);
+    color: white;
     margin-bottom: 20px;
     line-height: 1.5;
     font-size: 16px;
@@ -368,22 +374,5 @@ body.dark .modal-content {
 
 .close-btn {
     padding: 8px 14px;
-    background: #a259ff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s ease;
-}
-
-.close-btn:hover {
-    background: #c77dff;
-}
-
-@keyframes popup {
-    from { transform: translateY(20px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
-}
-
+    background
 

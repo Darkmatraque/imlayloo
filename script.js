@@ -61,10 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Charger le mode sauvegardé
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-    }
+// Charger le mode sauvegardé
+if (localStorage.getItem("theme") == "dark") {
+    document.body.classList.add("dark");
+}
 
-}); // FIN DU SCRIPT
+// FIN DU SCRIPT
+});
 

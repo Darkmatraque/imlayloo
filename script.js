@@ -37,27 +37,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ----- MODE SOMBRE / CLAIR -----
-    const switchContainer = document.querySelector(".theme-switch");
+// ----- MODE SOMBRE / CLAIR -----
+const switchContainer = document.querySelector(".theme-switch");
 
-    // Charger le mode sauvegardé
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-    }
+// Charger le mode sauvegardé
+if (localLocalStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+}
 
-    // Clic sur le switch
-    if (switchContainer) {
-        switchContainer.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
+// Clic sur le switch
+if (switchContainer) {
+    switchContainer.addEventListener("click", () => {
+        console.log("CLICK SWITCH"); // <<< TEST
+        document.body.classList.toggle("dark");
 
-            // Sauvegarde
-            if (document.body.classList.contains("dark")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
-        });
-    }
-
-});
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+}
 

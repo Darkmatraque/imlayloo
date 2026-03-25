@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btn && menu) {
         btn.addEventListener('click', () => {
+            console.log("CLICK SETTINGS BUTTON");
             menu.classList.toggle('open');
         });
     }
@@ -35,27 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-// ----- MODE SOMBRE / CLAIR -----
-const switchContainer = document.querySelector(".theme-switch");
+    // ----- MODE SOMBRE / CLAIR -----
+    const switchContainer = document.querySelector(".theme-switch");
 
-if (switchContainer) {
-    switchContainer.addEventListener("click", () => {
-        console.log("SWITCH CLICKED !");
-    });
-}
-
-
-    // Charger le mode sauvegardé
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark");
-    }
-
-    // Clic sur le switch
     if (switchContainer) {
         switchContainer.addEventListener("click", () => {
+            console.log("CLICK SWITCH BUTTON");
             document.body.classList.toggle("dark");
 
-            // Sauvegarde
             if (document.body.classList.contains("dark")) {
                 localStorage.setItem("theme", "dark");
             } else {
@@ -64,5 +52,9 @@ if (switchContainer) {
         });
     }
 
-}); // <<< FIN DU SCRIPT — très important !
+    // Charger le mode sauvegardé
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
 
+}); // <<< FIN DU SCRIPT

@@ -49,10 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         switchContainer.addEventListener("click", () => {
             console.log("CLICK SWITCH BUTTON");
 
-            // Toggle du thème
             document.body.classList.toggle("dark");
 
-            // Sauvegarde
             if (document.body.classList.contains("dark")) {
                 localStorage.setItem("theme", "dark");
             } else {
@@ -61,11 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-// Charger le mode sauvegardé
-if (localStorage.getItem("theme") == "dark") {
-    document.body.classList.add("dark");
-}
+    // Charger le mode sauvegardé
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
 
-// FIN DU SCRIPT
-});
-
+}); // <<< FIN DU SCRIPT (correct)

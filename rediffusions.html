@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
-</body>
-</html>
 
+    <!-- Bouton paramètres -->
     <div class="settings-container">
         <div class="settings-button">⚙️</div>
         <div class="settings-menu">
@@ -18,64 +16,63 @@
         </div>
     </div>
 
-<header>
-    <h1>Imlayloo</h1>
-<nav>
-    <a href="index.html">Accueil</a>
-    <a href="clips.html">Clips</a>
-    <a href="rediffusions.html" class="active">Rediffusions</a>
-    <a href="reseaux.html">Réseaux</a>
-    <a href="commandes.html">Commandes</a>
-    <a href="apropos.html">À propos</a>
-</nav>
+    <header>
+        <h1>Imlayloo</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="clips.html">Clips</a>
+            <a href="rediffusions.html" class="active">Rediffusions</a>
+            <a href="reseaux.html">Réseaux</a>
+            <a href="commandes.html">Commandes</a>
+            <a href="apropos.html">À propos</a>
+        </nav>
+    </header>
 
+    <section class="section">
+        <h2>Rediffusions</h2>
+        <div id="vods"></div>
+    </section>
 
+    <script>
+    const api = "https://imlayloo-api.kevin2007baumann.workers.dev";
+    const userId = "196955395";
 
+    function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString("fr-FR", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+    }
 
-</header>
+    async function loadVods() {
+        const res = await fetch(`${api}?endpoint=videos?user_id=${userId}&type=archive&first=10`);
+        const data = await res.json();
 
-<section class="section">
-    <h2>Rediffusions</h2>
-    <div id="vods"></div>
-</section>
+        const container = document.getElementById("vods");
 
-<script>
-const api = "https://imlayloo-api.kevin2007baumann.workers.dev";
-const userId = "196955395";
+        data.data.forEach(vod => {
+            const div = document.createElement("div");
+            div.className = "vod";
 
-function formatDate(dateStr) {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString("fr-FR", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-    });
-}
+            div.innerHTML = `
+                <div class="date">${formatDate(vod.created_at)}</div>
+                <iframe src="https://player.twitch.tv/?video=${vod.id}&parent=darkmatraque.github.io&autoplay=false" allowfullscreen></iframe>
+            `;
 
-async function loadVods() {
-    const res = await fetch(`${api}?endpoint=videos?user_id=${userId}&type=archive&first=10`);
-    const data = await res.json();
+            container.appendChild(div);
+        });
+    }
 
-    const container = document.getElementById("vods");
+    loadVods();
+    </script>
 
-    data.data.forEach(vod => {
-        const div = document.createElement("div");
-        div.className = "vod";
-
-        div.innerHTML = `
-            <div class="date">${formatDate(vod.created_at)}</div>
-            <iframe src="https://player.twitch.tv/?video=${vod.id}&parent=darkmatraque.github.io&autoplay=false" allowfullscreen></iframe>
-        `;
-
-        container.appendChild(div);
-    });
-}
-
-loadVods();
-</script>
+    <!-- Script du menu paramètres -->
+    <script src="script.js"></script>
 
 </body>
 </html>

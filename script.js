@@ -35,8 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ----- MODE SOMBRE / CLAIR -----
-    const switchContainer = document.querySelector(".theme-switch");
+// ----- MODE SOMBRE / CLAIR -----
+const switchContainer = document.querySelector(".theme-switch");
+
+if (switchContainer) {
+    switchContainer.addEventListener("click", () => {
+        console.log("SWITCH CLICKED !");
+    });
+}
+
 
     // Charger le mode sauvegardé
     if (localStorage.getItem("theme") === "dark") {

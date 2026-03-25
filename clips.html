@@ -12,7 +12,7 @@
         <div class="settings-button">⚙️</div>
 
         <div class="settings-menu">
-            <a href="#">Aide</a>
+            <a href="#" id="help-btn">Aide</a>
             <a href="#">Mode</a>
         </div>
     </div>
@@ -37,7 +37,7 @@
     <!-- SCRIPT TWITCH (fetch + grille) -->
     <script>
     const api = "https://imlayloo-api.kevin2007baumann.workers.dev";
-    const userId = "795341067"; // ✔️ BON ID TWITCH
+    const userId = "795341067";
 
     async function loadClips() {
         try {
@@ -45,7 +45,7 @@
             const data = await res.json();
 
             const container = document.getElementById("clips");
-            container.innerHTML = ""; // Nettoyage
+            container.innerHTML = "";
 
             if (!data.data || data.data.length === 0) {
                 container.innerHTML = "<p>Aucun clip disponible pour le moment.</p>";
@@ -78,8 +78,46 @@
     loadClips();
     </script>
 
+    <!-- POPUP AIDE -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <h2>Aide</h2>
+            <p>
+                Si vous avez besoin d'aide, veuillez contacter le modérateur du site  
+                dans le salon <strong>"site internet"</strong> sur Discord :
+            </p>
+
+            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link">
+                Ouvrir le Discord
+            </a>
+
+            <button id="close-help" class="close-btn">Fermer</button>
+        </div>
+    </div>
+
     <!-- SCRIPT DU MENU PARAMÈTRES -->
     <script src="script.js"></script>
+
+    <!-- SCRIPT POPUP AIDE -->
+    <script>
+        const helpBtn = document.getElementById("help-btn");
+        const helpModal = document.getElementById("help-modal");
+        const closeHelp = document.getElementById("close-help");
+
+        helpBtn.addEventListener("click", () => {
+            helpModal.style.display = "flex";
+        });
+
+        closeHelp.addEventListener("click", () => {
+            helpModal.style.display = "none";
+        });
+
+        helpModal.addEventListener("click", (e) => {
+            if (e.target === helpModal) {
+                helpModal.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 </html>

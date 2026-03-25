@@ -242,3 +242,65 @@ ul li:hover {
     box-shadow: 0 0 14px #c77dffcc;
 }
 
+/* -------------------- */
+/*   REDIFFUSIONS       */
+/* -------------------- */
+
+#vods {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.vod-card {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.45);
+}
+
+.vod-date {
+    font-size: 16px;
+    color: #4a004e;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.vod-thumb {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.vod-card h3 {
+    font-size: 18px;
+    color: #4a004e;
+    margin: 10px 0 15px;
+    font-weight: 600;
+}
+
+.vod-card button {
+    padding: 10px 16px;
+    border: none;
+    background: #a259ff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.25s ease;
+    box-shadow: 0 0 10px #a259ff88;
+}
+
+.vod-card button:hover {
+    background: #c77dff;
+    box-shadow: 0 0 14px #c77dffcc;
+}
+

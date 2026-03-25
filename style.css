@@ -1,9 +1,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-   background: linear-gradient(180deg, #F4AFC0, #F3A7BA);
+    background: #F4AFC0 !important;
     color: white;
 }
+
 
 header {
     text-align: center;

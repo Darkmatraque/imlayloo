@@ -7,10 +7,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// ----- MODE SOMBRE / CLAIR -----
+// ----- POPUP AIDE -----
+const helpBtn = document.getElementById("help-btn");
+const helpModal = document.getElementById("help-modal");
+const closeHelp = document.getElementById("close-help");
 
+if (helpBtn) {
+    helpBtn.addEventListener("click", () => {
+        helpModal.style.display = "flex";
+    });
+}
+
+if (closeHelp) {
+    closeHelp.addEventListener("click", () => {
+        helpModal.style.display = "none";
+    });
+}
+
+if (helpModal) {
+    helpModal.addEventListener("click", (e) => {
+        if (e.target === helpModal) {
+            helpModal.style.display = "none";
+        }
+    });
+}
+
+
+// ----- MODE SOMBRE / CLAIR -----
 const switchContainer = document.querySelector(".theme-switch");
-const switchCircle = document.querySelector(".switch .circle");
 
 // Charger le mode sauvegardé
 if (localStorage.getItem("theme") === "dark") {
@@ -18,38 +42,15 @@ if (localStorage.getItem("theme") === "dark") {
 }
 
 // Clic sur le switch
-switchContainer.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+if (switchContainer) {
+    switchContainer.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
 
-    // Sauvegarde
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
-});
-
-
-
-// ----- POPUP AIDE -----
-
-const helpButton = document.querySelector(".settings-menu a:first-child");
-const helpModal = document.getElementById("help-modal");
-const closeHelp = document.getElementById("close-help");
-
-// Ouvrir
-helpButton.addEventListener("click", () => {
-    helpModal.style.display = "flex";
-});
-
-// Fermer
-closeHelp.addEventListener("click", () => {
-    helpModal.style.display = "none";
-});
-
-// Fermer en cliquant autour
-helpModal.addEventListener("click", (e) => {
-    if (e.target === helpModal) {
-        helpModal.style.display = "none";
-    }
-});
+        // Sauvegarde
+        if (document.body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+}

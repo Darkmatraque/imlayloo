@@ -23,89 +23,65 @@
     </div>
 </div>
 
+<header>
+    <h1>Imlayloo</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="clips.html">Clips</a>
+        <a href="rediffusions.html">Rediffusions</a>
+        <a href="reseaux.html">Réseaux</a>
+        <a href="commandes.html">Commandes</a>
+        <a href="apropos.html" class="active">À propos</a>
+    </nav>
+</header>
 
+<section class="section">
+    <h2>À propos d’Imlayloo</h2>
 
+    <p>
+        Moi c’est <strong>Layloo</strong> (Leïla pour les intimes), streameuse passionnée et hôtesse de l’air dans la vie.
+        Entre deux vols je vous embarque en live pour partager des moments gaming et IRL toujours dans une ambiance détendue et naturelle.
+    </p>
 
-    <header>
-        <h1>Imlayloo</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="clips.html">Clips</a>
-            <a href="rediffusions.html">Rediffusions</a>
-            <a href="reseaux.html">Réseaux</a>
-            <a href="commandes.html">Commandes</a>
-            <a href="apropos.html" class="active">À propos</a>
-        </nav>
-    </header>
+    <p>
+        Au programme : multigaming, discussions spontanées, découvertes, et parfois des streams IRL pour vous faire voyager un peu avec moi.
+        Ici le plus important reste la bonne humeur et le plaisir de passer un bon moment ensemble.
+    </p>
 
-    <section class="section">
-        <h2>À propos d’Imlayloo</h2>
+    <p>
+        J'aime aussi échanger autour du cinéma, des séries, des voyages et de tout ce qui fait vivre une communauté au-delà du jeu.
+    </p>
 
+    <p>
+        Installez-vous, profitez, et peut-être que cet endroit deviendra aussi un peu le vôtre ✨
+    </p>
+
+    <h3>Contact professionnel</h3>
+    <p>
+        Pour toute demande professionnelle ou collaboration :<br>
+        <strong>Layloo.enq@gmail.com</strong>
+    </p>
+</section>
+
+<!-- POPUP AIDE -->
+<div id="help-modal" class="modal">
+    <div class="modal-content">
+        <h2>Aide</h2>
         <p>
-            Moi c’est <strong>Layloo</strong> (Leïla pour les intimes), streameuse passionnée et hôtesse de l’air dans la vie.
-            Entre deux vols je vous embarque en live pour partager des moments gaming et IRL toujours dans une ambiance détendue et naturelle.
+            Si vous avez besoin d'aide, veuillez contacter le modérateur du site  
+            dans le salon <strong>"site internet"</strong> sur Discord :
         </p>
 
-        <p>
-            Au programme : multigaming, discussions spontanées, découvertes, et parfois des streams IRL pour vous faire voyager un peu avec moi.
-            Ici le plus important reste la bonne humeur et le plaisir de passer un bon moment ensemble.
-        </p>
+        <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link">
+            Ouvrir le Discord
+        </a>
 
-        <p>
-            J'aime aussi échanger autour du cinéma, des séries, des voyages et de tout ce qui fait vivre une communauté au-delà du jeu.
-        </p>
-
-        <p>
-            Installez-vous, profitez, et peut-être que cet endroit deviendra aussi un peu le vôtre ✨
-        </p>
-
-        <h3>Contact professionnel</h3>
-        <p>
-            Pour toute demande professionnelle ou collaboration :<br>
-            <strong>Layloo.enq@gmail.com</strong>
-        </p>
-    </section>
-
-    <!-- POPUP AIDE -->
-    <div id="help-modal" class="modal">
-        <div class="modal-content">
-            <h2>Aide</h2>
-            <p>
-                Si vous avez besoin d'aide, veuillez contacter le modérateur du site  
-                dans le salon <strong>"site internet"</strong> sur Discord :
-            </p>
-
-            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link">
-                Ouvrir le Discord
-            </a>
-
-            <button id="close-help" class="close-btn">Fermer</button>
-        </div>
+        <button id="close-help" class="close-btn">Fermer</button>
     </div>
+</div>
 
-    <!-- Script du menu paramètres -->
-    <script src="script.js"></script>
-
-    <!-- Script du pop-up aide -->
-    <script>
-        const helpBtn = document.getElementById("help-btn");
-        const helpModal = document.getElementById("help-modal");
-        const closeHelp = document.getElementById("close-help");
-
-        helpBtn.addEventListener("click", () => {
-            helpModal.style.display = "flex";
-        });
-
-        closeHelp.addEventListener("click", () => {
-            helpModal.style.display = "none";
-        });
-
-        helpModal.addEventListener("click", (e) => {
-            if (e.target === helpModal) {
-                helpModal.style.display = "none";
-            }
-        });
-    </script>
+<!-- Script global -->
+<script src="script.js"></script>
 
 </body>
 </html>

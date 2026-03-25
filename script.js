@@ -34,23 +34,27 @@ if (helpModal) {
 
 
 // ----- MODE SOMBRE / CLAIR -----
-const switchContainer = document.querySelector(".theme-switch");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Charger le mode sauvegardé
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-}
+    const switchContainer = document.querySelector(".theme-switch");
 
-// Clic sur le switch
-if (switchContainer) {
-    switchContainer.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
+    // Charger le mode sauvegardé
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
 
-        // Sauvegarde
-        if (document.body.classList.contains("dark")) {
-            localStorage.setItem("theme", "dark");
-        } else {
-            localStorage.setItem("theme", "light");
-        }
-    });
-}
+    // Clic sur le switch
+    if (switchContainer) {
+        switchContainer.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+
+            // Sauvegarde
+            if (document.body.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
+});
+

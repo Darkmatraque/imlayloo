@@ -381,29 +381,38 @@ body.dark .modal-content {
 .theme-switch {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 8px 0;
+    justify-content: space-between;
+    width: 100%;
     cursor: pointer;
+    padding: 10px 0;
 }
 
+.theme-switch span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Le switch */
 .switch {
-    width: 45px;
-    height: 24px;
-    background: #ccc;
+    width: 50px;
+    height: 26px;
+    background: #d1d1d6;
     border-radius: 50px;
     position: relative;
-    transition: 0.25s ease;
+    transition: background 0.25s ease;
 }
 
+/* Le rond */
 .switch .circle {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     background: white;
     border-radius: 50%;
     position: absolute;
     top: 2px;
     left: 2px;
-    transition: 0.25s ease;
+    transition: transform 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 /* Mode sombre activé */
@@ -412,7 +421,7 @@ body.dark .switch {
 }
 
 body.dark .switch .circle {
-    transform: translateX(21px);
+    transform: translateX(24px);
 }
 
 /* ----- MODE SOMBRE GLOBAL ----- */

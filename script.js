@@ -8,34 +8,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ----- POPUP AIDE -----
-const helpBtn = document.getElementById("help-btn");
-const helpModal = document.getElementById("help-modal");
-const closeHelp = document.getElementById("close-help");
-
-if (helpBtn) {
-    helpBtn.addEventListener("click", () => {
-        helpModal.style.display = "flex";
-    });
-}
-
-if (closeHelp) {
-    closeHelp.addEventListener("click", () => {
-        helpModal.style.display = "none";
-    });
-}
-
-if (helpModal) {
-    helpModal.addEventListener("click", (e) => {
-        if (e.target === helpModal) {
-            helpModal.style.display = "none";
-        }
-    });
-}
-
-
-// ----- MODE SOMBRE / CLAIR -----
 document.addEventListener("DOMContentLoaded", () => {
 
+    const helpBtn = document.getElementById("help-btn");
+    const helpModal = document.getElementById("help-modal");
+    const closeHelp = document.getElementById("close-help");
+
+    if (helpBtn) {
+        helpBtn.addEventListener("click", () => {
+            helpModal.style.display = "flex";
+        });
+    }
+
+    if (closeHelp) {
+        closeHelp.addEventListener("click", () => {
+            helpModal.style.display = "none";
+        });
+    }
+
+    if (helpModal) {
+        helpModal.addEventListener("click", (e) => {
+            if (e.target === helpModal) {
+                helpModal.style.display = "none";
+            }
+        });
+    }
+
+
+    // ----- MODE SOMBRE / CLAIR -----
     const switchContainer = document.querySelector(".theme-switch");
 
     // Charger le mode sauvegardé
@@ -56,5 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});
 
+});

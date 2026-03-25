@@ -1,3 +1,7 @@
+/* -------------------- */
+/*   STYLE GLOBAL       */
+/* -------------------- */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,20 +22,69 @@ header h1 {
     color: #c77dff;
 }
 
+/* -------------------- */
+/*   NAVIGATION SLIDER  */
+/* -------------------- */
+
 nav {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 
-nav a {
-    margin: 0 15px;
+.nav-links {
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
     color: #c77dff;
     text-decoration: none;
     font-size: 18px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #ffffff;
 }
+
+/* Slider animé */
+.nav-links .slider {
+    position: absolute;
+    bottom: -8px;
+    height: 3px;
+    width: 0;
+    background-color: #a259ff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Position du slider selon l’onglet actif */
+.nav-links a:nth-child(1).active ~ .slider {
+    width: 70px;   /* Accueil */
+    left: 0px;
+}
+
+.nav-links a:nth-child(2).active ~ .slider {
+    width: 55px;   /* Clips */
+    left: 100px;
+}
+
+.nav-links a:nth-child(3).active ~ .slider {
+    width: 120px;  /* Rediffusions */
+    left: 175px;
+}
+
+.nav-links a:nth-child(4).active ~ .slider {
+    width: 85px;   /* Réseaux */
+    left: 315px;
+}
+
+/* -------------------- */
+/*   CONTENU            */
+/* -------------------- */
 
 .section {
     padding: 60px 20px;
@@ -59,49 +112,5 @@ ul li a {
 
 ul li a:hover {
     color: white;
-}
-
-nav a {
-    position: relative;
-    padding-bottom: 5px;
-}
-
-nav a {
-    position: relative;
-    padding-bottom: 5px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-}
-
-nav a {
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    width: 0%;
-    height: 3px;
-    background-color: #a259ff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-nav a.active::after {
-    width: 100%;
-}
-
-nav a:hover::after {
-    width: 100%;
 }
 

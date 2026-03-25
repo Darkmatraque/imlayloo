@@ -305,7 +305,7 @@ ul li:hover {
 }
 
 /* -------------------- */
-/*   POPUP AIDE         */
+/*   POPUP AIDE (NOUVEAU) */
 /* -------------------- */
 
 .modal {
@@ -320,41 +320,45 @@ ul li:hover {
 }
 
 .modal-content {
-    background: var(--card-bg-strong);
-    border: 1px solid var(--card-border);
-    padding: 25px;
+    background: rgba(255,255,255,0.9); /* Plus opaque = plus lisible */
     border-radius: 14px;
+    padding: 25px 30px;
     width: 90%;
-    max-width: 450px;
+    max-width: 380px; /* Plus compact */
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     animation: popup 0.25s ease;
 }
 
-@keyframes popup {
-    from { transform: scale(0.8); opacity: 0; }
-    to   { transform: scale(1); opacity: 1; }
+body.dark .modal-content {
+    background: rgba(30,30,30,0.9); /* Version sombre */
 }
 
 .modal-content h2 {
     margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 26px;
     color: var(--text);
+    font-weight: 700;
 }
 
 .modal-content p {
     color: var(--text);
     margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 16px;
 }
 
 .discord-link {
-    display: inline-block;
+    display: block;
     background: #5865F2;
     color: white;
     padding: 10px 16px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin: 0 auto 18px auto;
+    width: fit-content;
     transition: 0.2s ease;
 }
 
@@ -376,4 +380,10 @@ ul li:hover {
 .close-btn:hover {
     background: #c77dff;
 }
+
+@keyframes popup {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
 

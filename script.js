@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    // ----- MENU PARAMÈTRES -----
     const btn = document.querySelector('.settings-button');
     const menu = document.querySelector('.settings-menu');
 
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('open');
-    });
-});
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+        });
+    }
 
-// ----- POPUP AIDE -----
-document.addEventListener("DOMContentLoaded", () => {
 
+    // ----- POPUP AIDE -----
     const helpBtn = document.getElementById("help-btn");
     const helpModal = document.getElementById("help-modal");
     const closeHelp = document.getElementById("close-help");
@@ -58,3 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+

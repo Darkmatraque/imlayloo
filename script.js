@@ -9,15 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ----- MODE SOMBRE / CLAIR -----
 
-const modeButton = document.querySelector(".settings-menu a:nth-child(2)");
+const switchContainer = document.querySelector(".theme-switch");
+const switchCircle = document.querySelector(".switch .circle");
 
 // Charger le mode sauvegardé
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
 }
 
-// Clic sur "Mode"
-modeButton.addEventListener("click", () => {
+// Clic sur le switch
+switchContainer.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
     // Sauvegarde
@@ -27,6 +28,7 @@ modeButton.addEventListener("click", () => {
         localStorage.setItem("theme", "light");
     }
 });
+
 
 
 // ----- POPUP AIDE -----

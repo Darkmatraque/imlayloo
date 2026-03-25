@@ -34,7 +34,7 @@
         <div class="grid" id="clips"></div>
     </section>
 
-    <!-- SCRIPT TWITCH (fetch) -->
+    <!-- SCRIPT TWITCH (fetch + grille) -->
     <script>
     const api = "https://imlayloo-api.kevin2007baumann.workers.dev";
     const userId = "795341067"; // ✔️ BON ID TWITCH
@@ -53,13 +53,21 @@
             }
 
             data.data.forEach(clip => {
-                const iframe = document.createElement("iframe");
-                iframe.src = `https://clips.twitch.tv/embed?clip=${clip.id}&parent=darkmatraque.github.io&autoplay=false`;
-                iframe.width = "100%";
-                iframe.height = "200";
-                iframe.frameBorder = "0";
-                iframe.allowFullscreen = true;
-                container.appendChild(iframe);
+                const card = document.createElement("div");
+                card.className = "clip-card";
+
+                const thumb = clip.thumbnail_url
+                    .replace("-preview-480x272.jpg", "-preview-320x180.jpg");
+
+                card.innerHTML = `
+                    <img src="${thumb}" class="clip-thumb">
+                    <h3>${clip.title}</h3>
+                    <button onclick="window.open('https://clips.twitch.tv/${clip.id}', '_blank')">
+                        ▶ Voir le clip
+                    </button>
+                `;
+
+                container.appendChild(card);
             });
 
         } catch (err) {
@@ -75,7 +83,5 @@
 
 </body>
 </html>
-
-
 
 

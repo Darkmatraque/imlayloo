@@ -414,3 +414,26 @@ body.dark .switch {
 body.dark .switch .circle {
     transform: translateX(21px);
 }
+
+/* ----- MODE SOMBRE GLOBAL ----- */
+
+body.dark {
+    background-color: #0d0b14;
+    color: #ffffff;
+}
+
+body.dark header {
+    background-color: #1a1725;
+}
+
+body.dark nav a {
+    color: #ffffff;
+}
+
+body.dark .section {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .settings-menu {
+    background: rgba(255, 255, 255, 0.1);
+}

@@ -1,6 +1,8 @@
-const btn = document.querySelector('.settings-button');
-const menu = document.querySelector('.settings-menu');
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector('.settings-button');
+    const menu = document.querySelector('.settings-menu');
 
-btn.addEventListener('click', () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
 });

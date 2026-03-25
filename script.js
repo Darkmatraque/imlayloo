@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ----- MENU PARAMÈTRES -----
+    /* ------------------------------
+       MENU PARAMÈTRES
+    ------------------------------ */
     const btn = document.querySelector('.settings-button');
     const menu = document.querySelector('.settings-menu');
 
@@ -11,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ----- POPUP AIDE -----
+    /* ------------------------------
+       POPUP AIDE
+    ------------------------------ */
     const helpBtn = document.getElementById("help-btn");
     const helpModal = document.getElementById("help-modal");
     const closeHelp = document.getElementById("close-help");
@@ -36,14 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ----- MODE SOMBRE / CLAIR -----
+    /* ------------------------------
+       MODE SOMBRE / CLAIR
+    ------------------------------ */
     const switchContainer = document.querySelector(".theme-switch");
 
     if (switchContainer) {
         switchContainer.addEventListener("click", () => {
             console.log("CLICK SWITCH BUTTON");
+
+            // Toggle du thème
             document.body.classList.toggle("dark");
 
+            // Sauvegarde
             if (document.body.classList.contains("dark")) {
                 localStorage.setItem("theme", "dark");
             } else {
@@ -57,4 +66,5 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("dark");
     }
 
-}); // <<< FIN DU SCRIPT
+}); // FIN DU SCRIPT
+

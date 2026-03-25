@@ -34,19 +34,36 @@
         <div class="grid" id="clips"></div>
     </section>
 
+    <!-- SCRIPT TWITCH (fetch) -->
     <script>
     const api = "https://imlayloo-api.kevin2007baumann.workers.dev";
     const userId = "196955395";
 
     async function loadClips() {
-        const res = await fetch(`${api}?endpoint=clips?broadcaster_id=${userId}&first=12`);
+        // ⚠️ Correction ici : ?endpoint=clips&broadcaster_id=...
+        const res = await fetch(`${api}?endpoint=clips&broadcaster_id=${userId}&first=12`);
         const data = await res.json();
 
         const container = document.getElementById("clips");
 
         data.data.forEach(clip => {
             const iframe = document.createElement("iframe");
-            iframe.src = `https
+            iframe.src = `https://clips.twitch.tv/embed?clip=${clip.id}&parent=darkmatraque.github.io&autoplay=false`;
+            iframe.width = "100%";
+            iframe.height = "200";
+            iframe.frameBorder = "0";
+            container.appendChild(iframe);
+        });
+    }
+
+    loadClips();
+    </script>
+
+    <!-- SCRIPT DU MENU PARAMÈTRES -->
+    <script src="script.js"></script>
+
+</body>
+</html>
 
 
 

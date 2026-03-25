@@ -5,8 +5,8 @@
 body {
     margin: 0;
     font-family: "Poppins", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: #F6C6D1;
+    color: #2a2a2a;
     min-height: 100vh;
 }
 
@@ -17,7 +17,7 @@ body {
 header {
     text-align: center;
     padding: 30px 20px;
-    background: var(--header-bg);
+    background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     border-bottom: 2px solid #a259ff;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
@@ -52,12 +52,12 @@ nav a {
     border-radius: 8px;
     transition: 0.25s ease;
     font-weight: 500;
-    background: var(--nav-bg);
+    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(4px);
 }
 
 nav a:hover {
-    background: var(--nav-hover);
+    background: rgba(255,255,255,0.35);
 }
 
 nav a.active {
@@ -76,7 +76,7 @@ nav a.active {
 
 .section h2 {
     font-size: 36px;
-    color: var(--section-title);
+    color: #7a1fa2;
     margin-bottom: 25px;
     text-shadow: 0 0 8px rgba(0,0,0,0.15);
     font-weight: 600;
@@ -87,7 +87,7 @@ nav a.active {
     max-width: 750px;
     margin: auto;
     line-height: 1.7;
-    color: var(--text);
+    color: #3a003f;
 }
 
 /* -------------------- */
@@ -103,8 +103,8 @@ ul {
 ul li {
     margin: 12px 0;
     font-size: 20px;
-    color: var(--text);
-    background: var(--card-bg);
+    color: #4a004e;
+    background: rgba(255,255,255,0.55);
     padding: 12px 18px;
     border-radius: 10px;
     display: inline-block;
@@ -149,7 +149,7 @@ ul li:hover {
     position: absolute;
     bottom: 60px;
     right: 0;
-    background: var(--card-bg);
+    background: rgba(255,255,255,0.8);
     backdrop-filter: blur(6px);
     border-radius: 10px;
     padding: 10px 0;
@@ -162,13 +162,17 @@ ul li:hover {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: var(--text);
+    color: #4a004e;
     font-weight: 500;
     transition: 0.2s ease;
 }
 
 .settings-menu a:hover {
     background: rgba(0,0,0,0.1);
+}
+
+.settings-menu {
+    display: none;
 }
 
 .settings-menu.open {
@@ -186,14 +190,15 @@ ul li:hover {
     padding: 20px;
 }
 
+/* Carte d’un clip */
 .clip-card {
-    background: var(--card-bg-strong);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(8px);
     border-radius: 14px;
     padding: 15px;
     text-align: center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    border: 1px solid var(--card-border);
+    border: 1px solid rgba(255,255,255,0.45);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -202,6 +207,7 @@ ul li:hover {
     box-shadow: 0 10px 22px rgba(0,0,0,0.22);
 }
 
+/* Miniature */
 .clip-thumb {
     width: 100%;
     border-radius: 10px;
@@ -209,13 +215,15 @@ ul li:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Titre du clip */
 .clip-card h3 {
     font-size: 17px;
-    color: var(--text);
+    color: #4a004e;
     margin: 8px 0 12px;
     font-weight: 600;
 }
 
+/* Bouton "Voir le clip" */
 .clip-card button {
     padding: 10px 16px;
     border: none;
@@ -248,18 +256,18 @@ ul li:hover {
 }
 
 .vod-card {
-    background: var(--card-bg-strong);
+    background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(8px);
     border-radius: 14px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    border: 1px solid var(--card-border);
+    border: 1px solid rgba(255,255,255,0.45);
 }
 
 .vod-date {
     font-size: 18px;
-    color: var(--text);
+    color: #4a004e;
     font-weight: 700;
     margin-bottom: 12px;
 }
@@ -273,7 +281,7 @@ ul li:hover {
 
 .vod-card h3 {
     font-size: 18px;
-    color: var(--text);
+    color: #4a004e;
     margin: 10px 0 15px;
     font-weight: 600;
 }

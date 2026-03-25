@@ -28,6 +28,7 @@ modeButton.addEventListener("click", () => {
     }
 });
 
+
 // ----- POPUP AIDE -----
 
 const helpButton = document.querySelector(".settings-menu a:first-child");

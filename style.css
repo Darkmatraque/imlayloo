@@ -71,14 +71,37 @@ nav a {
     padding-bottom: 5px;
 }
 
-nav a.active::after {
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: -8px;
-    width: 100%;
+    width: 0%;
     height: 3px;
     background-color: #a259ff;
     border-radius: 2px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover::after {
+    width: 100%;
 }
 

@@ -53,10 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(res => res.json())
             .then(data => {
 
-                // TITRE ONGLET + TITRE PAGE
-                setText("titleTab", data.titleTab);
-                setText("title", data.title);
-
                 // NAVIGATION
                 setText("navHome", data.navHome);
                 setText("navClips", data.navClips);
@@ -130,5 +126,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /* ------------------------------
+       SERVICE WORKER (PWA)
+    ------------------------------ */
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+    }
+
 });
+
 

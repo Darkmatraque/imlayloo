@@ -19,19 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const helpModal = document.getElementById("help-modal");
     const closeHelp = document.getElementById("close-help");
 
-    if (helpBtn) {
+    if (helpBtn && helpModal) {
         helpBtn.addEventListener("click", () => {
             helpModal.style.display = "flex";
         });
     }
 
-    if (closeHelp) {
+    if (closeHelp && helpModal) {
         closeHelp.addEventListener("click", () => {
             helpModal.style.display = "none";
         });
-    }
 
-    if (helpModal) {
         helpModal.addEventListener("click", (e) => {
             if (e.target === helpModal) {
                 helpModal.style.display = "none";
@@ -43,47 +41,90 @@ document.addEventListener("DOMContentLoaded", () => {
        MULTILINGUE
     ------------------------------ */
 
+    function setText(id, value) {
+        const el = document.getElementById(id);
+        if (el && value !== undefined) {
+            el.textContent = value;
+        }
+    }
+
     function loadLanguage(lang) {
         fetch(`lang-${lang}.json`)
             .then(res => res.json())
             .then(data => {
 
-                document.getElementById("title").textContent = data.title;
-                document.getElementById("titleTab").textContent = data.titleTab;
+                // TITRE ONGLET + TITRE PAGE
+                setText("titleTab", data.titleTab);
+                setText("title", data.title);
 
-                document.getElementById("navHome").textContent = data.navHome;
-                document.getElementById("navClips").textContent = data.navClips;
-                document.getElementById("navVods").textContent = data.navVods;
-                document.getElementById("navSocial").textContent = data.navSocial;
-                document.getElementById("navCmd").textContent = data.navCmd;
-                document.getElementById("navAbout").textContent = data.navAbout;
+                // NAVIGATION
+                setText("navHome", data.navHome);
+                setText("navClips", data.navClips);
+                setText("navVods", data.navVods);
+                setText("navSocial", data.navSocial);
+                setText("navCmd", data.navCmd);
+                setText("navAbout", data.navAbout);
 
-                document.getElementById("intro1").textContent = data.intro1;
-                document.getElementById("intro2").textContent = data.intro2;
-                document.getElementById("intro3").textContent = data.intro3;
-                document.getElementById("intro4").textContent = data.intro4;
+                // PAGE ACCUEIL
+                setText("homeTitle", data.homeTitle);
+                setText("homeText", data.homeText);
 
-                document.getElementById("contactTitle").textContent = data.contactTitle;
-                document.getElementById("contactText").textContent = data.contactText;
+                // PAGE CLIPS
+                setText("clipsTitle", data.clipsTitle);
+                setText("clipsText", data.clipsText);
 
-                document.getElementById("helpTitle").textContent = data.helpTitle;
-                document.getElementById("helpText").textContent = data.helpText;
-                document.getElementById("helpBtnLink").textContent = data.helpBtnLink;
-                document.getElementById("close-help").textContent = data.helpClose;
+                // PAGE REDIFFUSIONS
+                setText("vodsTitle", data.vodsTitle);
+                setText("vodsText", data.vodsText);
+
+                // PAGE RÉSEAUX
+                setText("socialTitle", data.socialTitle);
+                setText("socialText", data.socialText);
+
+                // PAGE COMMANDES
+                setText("cmdTitle", data.cmdTitle);
+                setText("cmdText", data.cmdText);
+
+                // PAGE À PROPOS
+                setText("intro1", data.intro1);
+                setText("intro2", data.intro2);
+                setText("intro3", data.intro3);
+                setText("intro4", data.intro4);
+                setText("contactTitle", data.contactTitle);
+                setText("contactText", data.contactText);
+
+                // POPUP AIDE
+                setText("helpTitle", data.helpTitle);
+                setText("helpText", data.helpText);
+                setText("helpBtnLink", data.helpBtnLink);
+                setText("close-help", data.helpClose);
+            })
+            .catch(err => {
+                console.error("Erreur chargement langue :", err);
             });
     }
 
     let currentLang = localStorage.getItem("lang") || "fr";
     loadLanguage(currentLang);
 
-    document.getElementById("lang-fr").addEventListener("click", () => {
-        localStorage.setItem("lang", "fr");
-        loadLanguage("fr");
-    });
+    const btnFr = document.getElementById("lang-fr");
+    const btnEn = document.getElementById("lang-en");
 
-    document.getElementById("lang-en").addEventListener("click", () => {
-        localStorage.setItem("lang", "en");
-        loadLanguage("en");
-    });
+    if (btnFr) {
+        btnFr.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.setItem("lang", "fr");
+            loadLanguage("fr");
+        });
+    }
+
+    if (btnEn) {
+        btnEn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.setItem("lang", "en");
+            loadLanguage("en");
+        });
+    }
 
 });
+

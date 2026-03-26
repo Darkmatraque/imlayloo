@@ -364,3 +364,27 @@ ul li:hover {
     border-radius: 8px;
     cursor: pointer;
 }
+
+.lang-menu {
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.lang-menu span {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #4a004e;
+}
+
+.lang-menu a {
+    display: block;
+    padding: 6px 10px;
+    color: #4a004e;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.lang-menu a:hover {
+    background: rgba(0,0,0,0.1);
+}

@@ -98,6 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 setText("helpText", data.helpText);
                 setText("helpBtnLink", data.helpBtnLink);
                 setText("close-help", data.helpClose);
+
+                // FOOTER
+                setText("footerText", data.footerText);
+
             })
             .catch(err => {
                 console.error("Erreur chargement langue :", err);

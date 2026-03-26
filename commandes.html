@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Commandes - Imlayloo</title>
+    <title id="titleTab">Commandes - Imlayloo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,29 +10,36 @@
     <!-- Bouton paramètres -->
     <div class="settings-container">
         <div class="settings-button">⚙️</div>
+
         <div class="settings-menu">
             <a href="#" id="help-btn">Aide</a>
-            <a href="#">🚧 En construction 🚧</a>
+
+            <div class="lang-menu">
+                <span>🌍 Langue</span>
+                <a href="#" id="lang-fr">Français</a>
+                <a href="#" id="lang-en">English</a>
+            </div>
         </div>
     </div>
 
     <header>
         <h1>Imlayloo</h1>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="clips.html">Clips</a>
-            <a href="rediffusions.html">Rediffusions</a>
-            <a href="reseaux.html">Réseaux</a>
-            <a href="commandes.html" class="active">Commandes</a>
-            <a href="apropos.html">À propos</a>
+            <a href="index.html" id="navHome">Accueil</a>
+            <a href="clips.html" id="navClips">Clips</a>
+            <a href="rediffusions.html" id="navVods">Rediffusions</a>
+            <a href="reseaux.html" id="navSocial">Réseaux</a>
+            <a href="commandes.html" class="active" id="navCmd">Commandes</a>
+            <a href="apropos.html" id="navAbout">À propos</a>
         </nav>
     </header>
 
     <section class="section">
-        <h2>Commandes Twitch</h2>
-        <p>Voici toutes les commandes disponibles sur le live d’Imlayloo :</p>
+        <h2 id="cmdTitle"></h2>
+        <p id="cmdText"></p>
 
-        <ul>
+        <!-- LISTE DES COMMANDES (NE PAS TOUCHER) -->
+        <ul id="cmdList">
             <li><strong>!laylounge</strong></li>
             <li><strong>!roast</strong></li>
             <li><strong>!iq</strong></li>
@@ -50,19 +57,19 @@
             <li><strong>!socials</strong></li>
         </ul>
 
-        <p>La liste peut évoluer selon les besoins du live.</p>
+        <p id="cmdFooter">La liste peut évoluer selon les besoins du live.</p>
     </section>
 
     <!-- POPUP AIDE -->
     <div id="help-modal" class="modal">
         <div class="modal-content">
-            <h2>Aide</h2>
-            <p>
+            <h2 id="helpTitle">Aide</h2>
+            <p id="helpText">
                 Si vous avez besoin d'aide, veuillez contacter le modérateur du site  
                 dans le salon <strong>"site internet"</strong> sur Discord :
             </p>
 
-            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link">
+            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link" id="helpBtnLink">
                 Ouvrir le Discord
             </a>
 
@@ -70,29 +77,8 @@
         </div>
     </div>
 
-    <!-- Script du menu paramètres -->
+    <!-- SCRIPT MENU + MULTILINGUE -->
     <script src="script.js"></script>
-
-    <!-- Script du pop-up aide -->
-    <script>
-        const helpBtn = document.getElementById("help-btn");
-        const helpModal = document.getElementById("help-modal");
-        const closeHelp = document.getElementById("close-help");
-
-        helpBtn.addEventListener("click", () => {
-            helpModal.style.display = "flex";
-        });
-
-        closeHelp.addEventListener("click", () => {
-            helpModal.style.display = "none";
-        });
-
-        helpModal.addEventListener("click", (e) => {
-            if (e.target === helpModal) {
-                helpModal.style.display = "none";
-            }
-        });
-    </script>
 
 </body>
 </html>

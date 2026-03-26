@@ -1,5 +1,11 @@
 {
-    "titleTab": "About - Imlayloo",
+    "titleTabHome": "Home - Imlayloo",
+    "titleTabClips": "Clips - Imlayloo",
+    "titleTabVods": "Replays - Imlayloo",
+    "titleTabSocial": "Socials - Imlayloo",
+    "titleTabCmd": "Commands - Imlayloo",
+    "titleTabAbout": "About - Imlayloo",
+
     "title": "About Imlayloo",
 
     "navHome": "Home",
@@ -39,5 +45,4 @@
     "cmdText2": "The list may change depending on the needs of the live stream.",
 
     "footerText": "Website created by Darkmatraque."
-
 }

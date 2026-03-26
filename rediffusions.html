@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Rediffusions - Imlayloo</title>
+    <title id="titleTab">Rediffusions - Imlayloo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,24 +13,31 @@
 
         <div class="settings-menu">
             <a href="#" id="help-btn">Aide</a>
-            <a href="#">🚧 En construction 🚧</a>
+
+            <div class="lang-menu">
+                <span>🌍 Langue</span>
+                <a href="#" id="lang-fr">Français</a>
+                <a href="#" id="lang-en">English</a>
+            </div>
         </div>
     </div>
 
     <header>
         <h1>Imlayloo</h1>
         <nav>
-            <a href="index.html">Accueil</a>
-            <a href="clips.html">Clips</a>
-            <a href="rediffusions.html" class="active">Rediffusions</a>
-            <a href="reseaux.html">Réseaux</a>
-            <a href="commandes.html">Commandes</a>
-            <a href="apropos.html">À propos</a>
+            <a href="index.html" id="navHome">Accueil</a>
+            <a href="clips.html" id="navClips">Clips</a>
+            <a href="rediffusions.html" class="active" id="navVods">Rediffusions</a>
+            <a href="reseaux.html" id="navSocial">Réseaux</a>
+            <a href="commandes.html" id="navCmd">Commandes</a>
+            <a href="apropos.html" id="navAbout">À propos</a>
         </nav>
     </header>
 
     <section class="section">
-        <h2>Rediffusions</h2>
+        <h2 id="vodsTitle"></h2>
+        <p id="vodsText"></p>
+
         <div id="vods"></div>
     </section>
 
@@ -92,13 +99,13 @@
     <!-- POPUP AIDE -->
     <div id="help-modal" class="modal">
         <div class="modal-content">
-            <h2>Aide</h2>
-            <p>
+            <h2 id="helpTitle">Aide</h2>
+            <p id="helpText">
                 Si vous avez besoin d'aide, veuillez contacter le modérateur du site  
                 dans le salon <strong>"site internet"</strong> sur Discord :
             </p>
 
-            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link">
+            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link" id="helpBtnLink">
                 Ouvrir le Discord
             </a>
 
@@ -106,29 +113,8 @@
         </div>
     </div>
 
-    <!-- SCRIPT DU MENU PARAMÈTRES -->
+    <!-- SCRIPT MENU + MULTILINGUE -->
     <script src="script.js"></script>
-
-    <!-- SCRIPT POPUP AIDE -->
-    <script>
-        const helpBtn = document.getElementById("help-btn");
-        const helpModal = document.getElementById("help-modal");
-        const closeHelp = document.getElementById("close-help");
-
-        helpBtn.addEventListener("click", () => {
-            helpModal.style.display = "flex";
-        });
-
-        closeHelp.addEventListener("click", () => {
-            helpModal.style.display = "none";
-        });
-
-        helpModal.addEventListener("click", (e) => {
-            if (e.target === helpModal) {
-                helpModal.style.display = "none";
-            }
-        });
-    </script>
 
 </body>
 </html>

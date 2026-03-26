@@ -79,15 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // Charger la langue sauvegardée
-    let currentLang = localStorage.getItem("lang") || "fr";
-    loadLanguage(currentLang);
+// Charger la langue sauvegardée
+let currentLang = localStorage.getItem("lang") || "fr";
+loadLanguage(currentLang);
 
-    // Bouton pour changer de langue
-    langBtn.addEventListener("click", () => {
-        currentLang = currentLang === "fr" ? "en" : "fr";
-        localStorage.setItem("lang", currentLang);
-        loadLanguage(currentLang);
-    });
+// Boutons langue
+document.getElementById("lang-fr").addEventListener("click", () => {
+    localStorage.setItem("lang", "fr");
+    loadLanguage("fr");
+});
 
+document.getElementById("lang-en").addEventListener("click", () => {
+    localStorage.setItem("lang", "en");
+    loadLanguage("en");
 });

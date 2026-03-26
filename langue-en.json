@@ -1,0 +1,24 @@
+{
+    "titleTab": "About - Imlayloo",
+    "title": "About Imlayloo",
+
+    "navHome": "Home",
+    "navClips": "Clips",
+    "navVods": "Replays",
+    "navSocial": "Socials",
+    "navCmd": "Commands",
+    "navAbout": "About",
+
+    "intro1": "I’m Layloo (Leïla for close friends), a passionate streamer and flight attendant.",
+    "intro2": "Between flights, I go live to share gaming and IRL moments with you.",
+    "intro3": "On the menu: multigaming, spontaneous chats, discoveries, and sometimes IRL streams.",
+    "intro4": "Make yourself comfortable, enjoy, and maybe this place will become yours too ✨",
+
+    "contactTitle": "Business Contact",
+    "contactText": "For any business inquiries or collaborations:",
+
+    "helpTitle": "Help",
+    "helpText": "If you need help, please contact the site moderator in the \"website\" channel on Discord:",
+    "helpBtnLink": "Open Discord",
+    "helpClose": "Close"
+}

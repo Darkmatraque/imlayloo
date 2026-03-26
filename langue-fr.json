@@ -1,0 +1,24 @@
+{
+    "titleTab": "À propos - Imlayloo",
+    "title": "À propos d’Imlayloo",
+
+    "navHome": "Accueil",
+    "navClips": "Clips",
+    "navVods": "Rediffusions",
+    "navSocial": "Réseaux",
+    "navCmd": "Commandes",
+    "navAbout": "À propos",
+
+    "intro1": "Moi c’est Layloo (Leïla pour les intimes), streameuse passionnée et hôtesse de l’air dans la vie.",
+    "intro2": "Entre deux vols je vous embarque en live pour partager des moments gaming et IRL.",
+    "intro3": "Au programme : multigaming, discussions spontanées, découvertes, et parfois des streams IRL.",
+    "intro4": "Installez-vous, profitez, et peut-être que cet endroit deviendra aussi un peu le vôtre ✨",
+
+    "contactTitle": "Contact professionnel",
+    "contactText": "Pour toute demande professionnelle ou collaboration :",
+
+    "helpTitle": "Aide",
+    "helpText": "Si vous avez besoin d'aide, veuillez contacter le modérateur du site dans le salon \"site internet\" sur Discord :",
+    "helpBtnLink": "Ouvrir le Discord",
+    "helpClose": "Fermer"
+}

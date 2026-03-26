@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------
        MENU PARAMÈTRES
     ------------------------------ */
-    const btn = document.querySelector('.settings-button');
-    const menu = document.querySelector('.settings-menu');
+const btn = document.querySelector('.settings-button');
+const menu = document.querySelector('.settings-menu');
 
-    if (btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('open');
-        });
-    }
+if (btn && menu) {
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('open');
+    });
+}
 
     /* ------------------------------
        POPUP AIDE

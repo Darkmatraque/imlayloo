@@ -20,5 +20,20 @@
     "helpTitle": "Help",
     "helpText": "If you need help, please contact the site moderator in the \"website\" channel on Discord:",
     "helpBtnLink": "Open Discord",
-    "helpClose": "Close"
+    "helpClose": "Close",
+
+    "homeTitle": "Welcome to Imlayloo’s website",
+    "homeText": "Discover clips, replays, social links and all info about Layloo.",
+
+    "clipsTitle": "Twitch Clips",
+    "clipsText": "Here are the best moments captured live.",
+
+    "vodsTitle": "Replays",
+    "vodsText": "Watch previous livestreams directly from this page.",
+
+    "socialTitle": "Social Networks",
+    "socialText": "Find Layloo on all her platforms.",
+
+    "cmdTitle": "Chat Commands",
+    "cmdText": "Here are all the commands available on the livestream."
 }

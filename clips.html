@@ -6,11 +6,10 @@
     <!-- OPTIMISATION MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title id="titleTab">À propos - Imlayloo</title>
+    <title id="titleTab">Clips - Imlayloo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 
     <!-- Bouton paramètres -->
     <div class="settings-container">
@@ -107,94 +106,12 @@
         </div>
     </div>
 
-    <!-- SCRIPT MENU + MULTILINGUE -->
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
+    <!-- SCRIPT MULTILINGUE -->
+    <script src="script.js"></script>
 
-    <!-- OPTIMISATION MOBILE -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title id="titleTab">À propos - Imlayloo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Bouton paramètres -->
-<div class="settings-container">
-    <div class="settings-button">⚙️</div>
-
-    <div class="settings-menu">
-        <a href="#" id="help-btn">Aide</a>
-
-        <div class="lang-menu">
-            <span>🌍 Langue</span>
-            <a href="#" id="lang-fr">Français</a>
-            <a href="#" id="lang-en">English</a>
-        </div>
-    </div>
-</div>
-
-
-    <header>
-        <h1>Imlayloo</h1>
-        <nav>
-            <a href="index.html" id="navHome">Accueil</a>
-            <a href="clips.html" id="navClips">Clips</a>
-            <a href="rediffusions.html" id="navVods">Rediffusions</a>
-            <a href="reseaux.html" id="navSocial">Réseaux</a>
-            <a href="commandes.html" id="navCmd">Commandes</a>
-            <a href="apropos.html" class="active" id="navAbout">À propos</a>
-        </nav>
-    </header>
-
-    <section class="section">
-        <h2 id="title"></h2>
-
-        <p id="intro1"></p>
-        <p id="intro2"></p>
-        <p id="intro3"></p>
-        <p id="intro4"></p>
-
-        <h3 id="contactTitle"></h3>
-        <p id="contactText"></p>
-        <p><strong id="contactMail">Layloo.enq@gmail.com</strong></p>
-    </section>
-
-    <!-- POPUP AIDE -->
-    <div id="help-modal" class="modal">
-        <div class="modal-content">
-            <h2 id="helpTitle">Aide</h2>
-            <p id="helpText">
-                Si vous avez besoin d'aide, veuillez contacter le modérateur du site  
-                dans le salon <strong>"site internet"</strong> sur Discord :
-            </p>
-
-            <a href="https://discord.gg/ChRDm27m9Y" target="_blank" class="discord-link" id="helpBtnLink">
-                Ouvrir le Discord
-            </a>
-
-            <button id="close-help" class="close-btn">Fermer</button>
-        </div>
-    </div>
-
-
-<script src="script.js"></script>
-
-<script>
-    setText("titleTab", data.titleTabClips); 
-</script>
-
-
-    <footer>
-        <p id="footerText"></p>
-        <p>© 2025 Imlayloo — All rights reserved</p>
-    </footer>
-
-</body>
-</html>
-
+    <script>
+        setText("titleTab", data.titleTabClips);
+    </script>
 
     <footer>
         <p id="footerText"></p>

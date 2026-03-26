@@ -171,10 +171,6 @@ ul li:hover {
     background: rgba(0,0,0,0.1);
 }
 
-.settings-menu {
-    display: none;
-}
-
 .settings-menu.open {
     display: block;
 }
@@ -190,7 +186,6 @@ ul li:hover {
     padding: 20px;
 }
 
-/* Carte d’un clip */
 .clip-card {
     background: rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(8px);
@@ -207,7 +202,6 @@ ul li:hover {
     box-shadow: 0 10px 22px rgba(0,0,0,0.22);
 }
 
-/* Miniature */
 .clip-thumb {
     width: 100%;
     border-radius: 10px;
@@ -215,7 +209,6 @@ ul li:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Titre du clip */
 .clip-card h3 {
     font-size: 17px;
     color: #4a004e;
@@ -223,7 +216,6 @@ ul li:hover {
     font-weight: 600;
 }
 
-/* Bouton "Voir le clip" */
 .clip-card button {
     padding: 10px 16px;
     border: none;
@@ -305,7 +297,7 @@ ul li:hover {
 }
 
 /* -------------------- */
-/*   POPUP AIDE COLORÉ  */
+/*   POPUP AIDE         */
 /* -------------------- */
 
 .modal {
@@ -320,24 +312,16 @@ ul li:hover {
 }
 
 .modal-content {
-    background: rgba(162, 89, 255, 0.25); /* Violet transparent */
+    background: rgba(162, 89, 255, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.35);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
     padding: 25px 30px;
     border-radius: 16px;
     width: 90%;
     max-width: 380px;
-
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     animation: popup 0.25s ease;
-}
-
-body.dark .modal-content {
-    background: rgba(162, 89, 255, 0.15); /* Version sombre */
-    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .modal-content h2 {
@@ -374,75 +358,9 @@ body.dark .modal-content {
 
 .close-btn {
     padding: 8px 14px;
-    background
-
-/* ----- SWITCH MODE SOMBRE (STYLE IPHONE) ----- */
-
-.theme-switch {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    cursor: pointer;
-    padding: 10px 0;
-}
-
-.theme-switch span {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-/* Le switch */
-.switch {
-    width: 50px;
-    height: 26px;
-    background: #d1d1d6;
-    border-radius: 50px;
-    position: relative;
-    transition: background 0.25s ease;
-}
-
-/* Le rond */
-.switch .circle {
-    width: 22px;
-    height: 22px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.25s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-/* Mode sombre activé */
-body.dark .switch {
     background: #a259ff;
-}
-
-body.dark .switch .circle {
-    transform: translateX(24px);
-}
-
-/* ----- MODE SOMBRE GLOBAL ----- */
-
-body.dark {
-    background-color: #0d0b14;
-    color: #ffffff;
-}
-
-body.dark header {
-    background-color: #1a1725;
-}
-
-body.dark nav a {
-    color: #ffffff;
-}
-
-body.dark .section {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-body.dark .settings-menu {
-    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

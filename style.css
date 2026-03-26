@@ -399,3 +399,10 @@ body.loaded {
     opacity: 1;
 }
 
+a {
+    transition: opacity 0.2s;
+}
+
+a:active {
+    opacity: 0.5;
+}
